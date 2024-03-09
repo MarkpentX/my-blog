@@ -1,6 +1,6 @@
 from datetime import date
 
-from django.http import HttpResponse
+from django.http import Http404
 from django.shortcuts import render
 
 
@@ -8,7 +8,7 @@ from django.shortcuts import render
 posts_list = [
     {
         "slug": "hike-in-the-mountains",
-        "image": "mountains.jpg",
+        "image": "nature1.jpg",
         "author": "Maximilian",
         "date": date(2021, 7, 21),
         "title": "Mountain Hiking",
@@ -29,7 +29,7 @@ posts_list = [
     },
     {
         "slug": "programming-is-fun",
-        "image": "coding.jpg",
+        "image": "nature2.jpg",
         "author": "Mark",
         "date": date(2022, 3, 10),
         "title": "Programming Is Great!",
@@ -50,7 +50,7 @@ posts_list = [
     },
     {
         "slug": "into-the-woods",
-        "image": "woods.jpg",
+        "image": "nature3.png",
         "author": "Mark",
         "date": date(2020, 8, 5),
         "title": "Nature At Its Best",
@@ -83,4 +83,16 @@ def posts(request):
 
 
 def specific_post(request, slug):
-    return HttpResponse("specific page")
+    # Перевірити чи є СЛАГ в списку словників
+
+    for item in posts_list:
+        if item["slug"] == slug:
+            return render(request, 'posts/specific_post.html', {
+                "post": item
+            })
+        else:
+            return Http404()
+
+
+
+

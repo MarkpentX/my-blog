@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'layout.html' %}
 
-</body>
-</html>
+{% block page_title %}
+    test
+{% endblock %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+{% endblock %}
+
+
+HOMEWORK:
+1. Добавити Header
+2. Зробити красиву сторінку використовуючи grid css (мінімум - зробити все по центру)
+
+
