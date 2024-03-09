@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+    {% include 'posts/includes/header.html' %}
+    <div class="mainContainer">
+        <div class="profile-info">
+            <img src='{% static "posts/images/profile_picture.png" %}'
+             alt="logo pic"
+             width="150px"
+            class="profile-pic">
+        <h1 class="profile-name">MARK'S BLOG</h1>
+        </div>
+        <p class="main-description">Hi, I am Mark and I love blogging about tech and the world!</p>
+    </div>
+
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "posts/style.css" %}">
+    <link rel="stylesheet" href="{% static 'posts/header.css' %}">
+{% endblock %}

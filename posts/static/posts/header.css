@@ -1,0 +1,40 @@
+.navigation{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 10vh;
+    align-items: center;
+    background-image:linear-gradient(to bottom right, #530DFF, #5800FF);
+}
+
+.navigation a:first-child {
+    padding-left: 5%;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    justify-self: left;
+}
+
+.navigation a:first-child:hover {
+    color: black;
+    font-size: 40px;
+}
+
+.navigation a:nth-child(2){
+    justify-self: right;
+    padding-right: 5%;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    color: white;
+        text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+.navigation a:nth-child(2):hover{
+    color: red;
+    font-size: 40px;
+      -webkit-text-stroke: 1px red; /* для браузеров на основе WebKit */
+    text-stroke: 1px red;
+}
