@@ -83,15 +83,13 @@ def posts(request):
 
 
 def specific_post(request, slug):
-    # Перевірити чи є СЛАГ в списку словників
-
     for item in posts_list:
         if item["slug"] == slug:
             return render(request, 'posts/specific_post.html', {
                 "post": item
             })
-        else:
-            return Http404()
+
+    return Http404()
 
 
 

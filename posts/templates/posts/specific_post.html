@@ -1,17 +1,17 @@
 {% extends 'layout.html' %}
+{% load static %}
 
-{% block page_title %}
-    test
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'posts/header.css' %}">
+    <link rel="stylesheet" href="{% static 'posts/specific_post.css' %}">
 {% endblock %}
 
 {% block content %}
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.content }}</p>
+    {% include 'posts/includes/header.html' %}
+    <div class="mainContainer">
+         <h1 >{{ post.title }}</h1>
+         <p>{{ post.content }}</p>
+        <img src='{% static "posts/images/" %}{{ post.image }}' alt="{{ post.image }}">
+    </div>
 {% endblock %}
-
-
-HOMEWORK:
-1. Добавити Header
-2. Зробити красиву сторінку використовуючи grid css (мінімум - зробити все по центру)
-
 

@@ -1,0 +1,16 @@
+.mainContainer{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    justify-items: center;
+
+}
+
+.mainContainer img{
+    width: 200px;
+}
+
+.mainContainer p{
+    width: 400px;
+}
+
